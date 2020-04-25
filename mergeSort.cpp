@@ -42,10 +42,17 @@ void mergeSort(vector<Var>& arr, vector<Var>& ans, int left, int right) {
     }
 }
 
-std::vector<int> testcase1 = {5,2,7,3,5,7,8,23,1};
-std::vector<double> testcase2 = {4.1, 2.2, 8.7, 89.1, 111.5};
-
 int main(int argc, const char** argv) {
+    std::default_random_engine e;
+    std::uniform_int_distribution<unsigned> list1(0, 100);
+    std::uniform_real_distribution<double> list2(0.0, 100.0);
+    std::vector<int> testcase1;
+    std::vector<double> testcase2;
+    for (int i = 0; i < 20; i++) {
+        testcase1.push_back(list1(e));
+        testcase2.push_back(list2(e));
+    }
+
     vector<int> ans1(testcase1.size());
     vector<double> ans2(testcase2.size());
     mergeSort(testcase1, ans1, 0, testcase1.size() - 1);
