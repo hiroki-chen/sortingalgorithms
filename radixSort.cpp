@@ -15,7 +15,6 @@ void radixSort(std::vector<Var>& arr, int len) {
                 }
                     thisBucket.clear();
             }
-        
     }
 }
 
